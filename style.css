@@ -1,153 +1,172 @@
+/* Estilos Generales */
 body {
     font-family: 'Cormorant Garamond', serif;
     background-color: transparent;
     color: #ffffff;
     margin: 0;
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
 }
 
-/* Estilos para el video de fondo */
 #mi-video-fondo {
     position: fixed;
     right: 0;
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
-    width: auto;
-    height: auto;
     z-index: -100;
     background-size: cover;
     filter: brightness(0.6);
 }
 
-/* Estilos de tipografía */
+/* Tipografía */
 h1, h2, h3 {
     font-family: 'Dancing Script', cursive;
     color: #ffffff;
     text-align: center;
+    margin-top: 0;
 }
 
 h1 { font-size: 4em; }
 h2 { font-size: 2.5em; }
 h3 { font-size: 1.8em; }
 
-p { text-align: center; }
+p { 
+    text-align: center; 
+    font-size: 1.1em;
+}
 
 /* Sección Principal */
 #principal {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-}
-
-.invitacion-container {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.5);
     padding: 20px;
-    border-radius: 10px;
 }
 
-/* Animaciones de entrada */
-.nombre-principal, .titulo-principal, .mensaje, .contador {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+/* Nuevo contenedor que alinea los dos bloques (texto y contador) */
+.contenido-principal {
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center;    /* Centra los bloques horizontalmente */
+    gap: 20px;              /* Espacio entre el texto y la caja del contador */
+    width: 100%;
+    max-width: 600px;       /* Ancho máximo para el contenido */
 }
 
-/* Estilos para el contador */
+/* Estilos para el texto principal (sin fondo) */
+.info-principal {
+    text-align: center;
+    /* Sombra para que el texto sea legible sobre el video */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* La caja con fondo morado, aplicada SOLO al contador */
+.contador-box {
+    background-color: rgba(82, 1, 133, 0.84);
+    padding: 20px 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px; /* Ancho máximo para la caja del contador */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Pequeño ajuste al párrafo "Faltan:" para que se vea mejor */
+.contador-box p {
+    margin-bottom: 8px;
+    font-size: 1.2em;
+}
+/* Contador */
 #countdown {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2em;
-    color: #b38b6d;
+    font-size: 1.5em; /* Ajustado para mejor legibilidad */
+    color: whitesmoke;
     margin-top: 10px;
     font-weight: bold;
 }
 
-/* Estilos para el botón "Ver más" */
-.boton-ver-mas {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #b38b6d;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.boton-ver-mas:hover {
-    background-color: #9f7d5c;
-}
-
 /* Estilos de las secciones */
 .seccion {
-    padding: 50px 20px;
-    background-color: transparent;
-    border-top: 1px solid #ddd;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    padding: 60px 20px;
 }
 
-/* Galería de fotos */
-.galeria-fotos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    margin-top: 20px;
+/* Contenedor de tarjetas con FLEXBOX */
+.seccion-content {
+    display: flex; /* ¡Aquí aplicamos Flexbox! */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    align-items: stretch; /* Hace que todas las tarjetas tengan la misma altura */
+    flex-wrap: wrap; /* Permite que las tarjetas pasen a la siguiente línea si no caben */
+    gap: 20px; /* Espacio entre las tarjetas */
 }
 
-.galeria-fotos img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transform: scale(1);
-    transition: transform 0.3s ease;
-}
-
-.galeria-fotos img:hover {
-    transform: scale(1.05);
-}
-
-/* Tarjetas informativas */
+/* Tarjetas informativas - AHORA SON RESPONSIVAS */
 .tarjeta {
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    background-color: rgba(82, 1, 133, 0.84);
+    border: 4px solid whitesmoke;
+    padding: 30px;
+    border-radius: 15px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    
+    /* MEJORA: Flexibilidad en lugar de tamaño fijo */
+    flex-basis: 400px; /* Base de ancho para cada tarjeta */
+    flex-grow: 1; /* Permite que la tarjeta crezca si hay espacio */
+    max-width: 450px; /* Un ancho máximo para mantener la estética */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .icono {
-    font-size: 2em;
-    color: #b38b6d;
-    margin-bottom: 10px;
+    font-size: 2.5em;
+    color: #b38b6d; /* Cambiado a blanco para mejor contraste */
+    margin-bottom: 15px;
 }
 
 .boton-enlace {
     display: inline-block;
-    padding: 10px 20px;
-    margin-top: 15px;
-    background-color: #b38b6d;
-    color: white;
+    padding: 12px 25px;
+    margin-top: 20px;
+    background-color: #b38b6d; /* Un lila más suave y elegante */
+    color: whitesmoke;
+    font-weight: bold;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .boton-enlace:hover {
-    background-color: #9f7d5c;
+    background-color: #ffffff;
+    transform: scale(1.05);
 }
 
+/* Galería de fotos */
+.galeria-fotos {
+    display: flex; /* Usando Flexbox como pediste */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.galeria-fotos img {
+    width: 100%;
+    max-width: 250px; /* Ancho máximo por foto */
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-fotos img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Footer y Ribbon */
 .footer {
     text-align: center;
     opacity: .9;
@@ -161,6 +180,92 @@ p { text-align: center; }
     top: 50%;
     transform: rotate(-90deg) translateY(-50%);
     color: rgba(255, 255, 255, .85);
-    letter-spacing: 3px;
+    letter-spacing: 10px;
     font-weight: 700;
+}
+
+
+/* --- INICIO DE ESTILOS PARA ANIMACIONES DE ENTRADA --- */
+
+/* Preparamos los elementos para la animación: los hacemos invisibles */
+.tarjeta,
+#foto1,
+#foto2,
+#foto3,
+.icono {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Definimos la posición inicial de cada elemento antes de animarse */
+
+/* Imagen 1 (entra desde la derecha) */
+#foto1 {
+    transform: translateX(50px);
+}
+
+/* Imagen 2, Tarjetas e Íconos (entran desde abajo) */
+#foto2,
+.tarjeta,
+.icono {
+    transform: translateY(50px);
+}
+
+/* Imagen 3 (entra desde la izquierda) */
+#foto3 {
+    transform: translateX(-50px);
+}
+
+/* Añade un retraso a la animación del ícono para un efecto más pulido */
+.icono {
+    transition-delay: 0.2s;
+}
+
+/* --- FIN DE ESTILOS PARA ANIMACIONES DE ENTRADA --- */
+
+
+/* ---------------------------------- */
+/* ----- DISEÑO RESPONSIVO (MEDIA QUERIES) ----- */
+/* ---------------------------------- */
+
+/* Para Tablets (hasta 768px) */
+@media (max-width: 768px) {
+    h1 { font-size: 3em; }
+    h2 { font-size: 2em; }
+    p { font-size: 1em; }
+
+    #countdown { font-size: 1.2em; }
+
+    .seccion-content {
+        flex-direction: column; /* Las tarjetas se apilan verticalmente */
+        align-items: center; /* Se centran en la pila */
+    }
+
+    .tarjeta {
+        flex-basis: 100%; /* Ocupa todo el ancho disponible */
+        max-width: 500px;
+    }
+}
+
+/* Para Celulares (hasta 480px) */
+@media (max-width: 480px) {
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 1.8em; }
+
+    .invitacion-container {
+        padding: 20px;
+    }
+
+    #countdown {
+        font-size: 1em;
+        line-height: 1.4;
+    }
+
+    .galeria-fotos img {
+        max-width: 100%; /* Las fotos ocupan todo el ancho */
+    }
+    
+    .ribbon {
+        display: none; /* Ocultamos el listón en pantallas muy pequeñas */
+    }
 }
