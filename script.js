@@ -1,5 +1,6 @@
 // Función para el contador regresivo
 const fechaEvento = new Date("October 18, 2025 21:00:00").getTime();
+const countdownContainer = document.getElementById('countdown'); 
 
 const x = setInterval(function() {
     const ahora = new Date().getTime();
@@ -10,48 +11,83 @@ const x = setInterval(function() {
     const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
     const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
 
-    // Muestra el resultado
-    document.getElementById("countdown").innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+    if (countdownContainer) {
+        countdownContainer.innerHTML = `
+            <div class="tiempo-item">
+                <span class="numero">${dias}</span>
+                <span class="label">Días</span>
+            </div>
+            <div class="tiempo-item">
+                <span class="numero">${horas}</span>
+                <span class="label">Horas</span>
+            </div>
+            <div class="tiempo-item">
+                <span class="numero">${minutos}</span>
+                <span class="label">Minutos</span>
+            </div>
+            <div class="tiempo-item">
+                <span class="numero">${segundos}</span>
+                <span class="label">Segundos</span>
+            </div>
+        `;
+    }
 
     if (distancia < 0) {
         clearInterval(x);
-        document.getElementById("countdown").innerHTML = "¡La fiesta ya comenzó!";
+        if (countdownContainer) {
+            countdownContainer.innerHTML = "¡La fiesta ya comenzó!";
+        }
     }
 }, 1000);
 
 
-// Función para animar elementos al hacer scroll
+// Función para animar elementos y controlar la música
 document.addEventListener("DOMContentLoaded", function() {
-    // Seleccionamos TODOS los elementos que queremos animar
-    const elementosAnimados = document.querySelectorAll(".tarjeta, #foto1, #foto2, #foto3, .icono");
+    // DESPUÉS
+const elementosAnimados = document.querySelectorAll(".tarjeta, #foto1, #foto2, #foto3, .icono, .countdown, .despedida-subtitulo, .despedida-titulo, .boton-enlace");
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Al volverse visible, reseteamos su opacidad y transformación
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translate(0)"; // Resetea translateX y translateY
-                observer.unobserve(entry.target); // Dejamos de observarlo para que la animación no se repita
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.1 // La animación se dispara cuando el 10% del elemento es visible
+        threshold: 0.1
     });
     
-    // Anima la sección principal de inmediato
-    document.querySelector('#principal').style.opacity = "1";
-    
-    // Observamos cada elemento individualmente
     elementosAnimados.forEach(elemento => {
         observer.observe(elemento);
     });
 
-    // Controla la música
+    // Controlador de música
     const musica = document.getElementById('musica-fondo');
-    if (musica) {
-        musica.play().catch(error => {
-            console.log("La reproducción automática fue bloqueada. Se necesita interacción del usuario.");
-            document.body.addEventListener('click', () => musica.play(), { once: true });
+    const playButton = document.querySelector('.play');
+
+    if (playButton) {
+        if (!musica.paused) {
+            playButton.textContent = '❚❚';
+        }
+
+        playButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            if (musica.paused) {
+                musica.play();
+                playButton.textContent = '❚❚';
+            } else {
+                musica.pause();
+                playButton.textContent = '▶';
+            }
         });
     }
+
+    musica.play().catch(() => {
+        document.body.addEventListener('click', () => {
+            musica.play();
+            if (playButton) {
+                playButton.textContent = '❚❚';
+            }
+        }, { once: true });
+    });
 });
