@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis 15 Años - Delfina</title>
+
+    <meta name="description" content="¡Te invito a celebrar mis 15 años! Acompañame en este día tan especial.">
+    <meta property="og:title" content="Mis 15 Años - Delfina">
+    <meta property="og:description"
+        content="Hay momentos inolvidables que se atesoran en el corazón para siempre. Por esa razón, quiero que compartas conmigo este día tan especial.">
+    <meta property="og:image" content="soporte/titi1.jpg">
     <link rel="stylesheet" href="style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Dancing+Script:wght@400;700&display=swap"
@@ -26,114 +32,128 @@
         Tu navegador no soporta el elemento de audio.
     </audio>
 
-    <section id="principal">
-        <div class="contenido-principal">
-            <button class="play" aria-label="Dale play">▶</button>
-            <p class="play-label">¡Dale Play!</p>
-            <p class="date">18/10/2025</p>
-            <div class="info-principal">
-                <h1 class="titulo-principal">DELFINA</h1>
-                <h2 class="nombre-principal">Mis quince</h2>
-                <p class="mensaje">
-                    Hay momentos inolvidables que se atesoran en el corazón para siempre.
-                    Por esa razón, quiero que compartas conmigo este día tan especial.
-                </p>
+    <main>
+        <section id="principal">
+            <div class="contenido-principal">
+                <button class="play" aria-label="Dale play">▶</button>
+                <p class="play-label">¡Dale Play!</p>
+                <p class="date">18/10/2025</p>
+                <div class="info-principal">
+                    <h1 class="titulo-principal">DELFINA</h1>
+                    <h2 class="nombre-principal">Mis quince</h2>
+                    <p class="mensaje">
+                        Hay momentos inolvidables que se atesoran en el corazón para siempre.
+                        Por esa razón, quiero que compartas conmigo este día tan especial.
+                    </p>
+                </div>
+                <div class="contador-box">
+                    <p>¿ CUÁNTO FALTA ?</p>
+                    <div id="countdown"></div>
+                </div>
             </div>
-            <div class="contador-box">
-                <p>¿ CUÁNTO FALTA ?</p>
-                <div id="countdown"></div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="galeria" class="seccion">
-        <div class="galeria-fotos">
-            <img src="soporte/titi1.jpg" alt="Foto 1" id="foto1">
-        </div>
-    </section>
-
-    <section id="extras" class="seccion">
-        <div class="seccion-content">
-            <div class="tarjeta">
-                <i class="fas fa-map-marker-alt icono"></i>
-                <h3 class="titulo-tarjeta">Ubicación</h3>
-                <p>Salón Nova Vila</p>
-                <p>Av. Ex Combatientes de Malvinas</p>
-                <p>Provincia de Salta</p>
-                <a href="https://www.google.com/maps/place/Nova+Vila+Salon+de+Eventos/@-24.8586988,-65.4519491,752m/data=!3m2!1e3!4b1!4m6!3m5!1s0x941bdd49fd878225:0x3e5a120dd8b8b8be!8m2!3d-24.8586988!4d-65.4519491!16s%2Fg%2F11ddxr9262"
-                    target="_blank" class="boton-enlace">Cómo llegar</a>
+        <section class="seccion">
+            <div class="galeria-fotos">
+                <img src="soporte/titi1.jpg" alt="Delfina en una sesión de fotos" id="foto1"
+                    class="animar-entrada animar-desde-derecha">
             </div>
-            <div class="tarjeta">
-                <i class="fas fa-music icono"></i>
-                <h3 class="titulo-tarjeta">Playlist</h3>
-                <p>¡Quiero que nos divirtamos juntos!</p>
-                <p>Ayúdame desde ya hacer la playlist de mi fiesta con las canciones infaltables, las que quieres oír y
-                    bailar</p>
-                <a href="https://www.youtube.com/" target="_blank" class="boton-enlace">Sugerir canciones</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="galeria" class="seccion">
-        <div class="galeria-fotos">
-            <img src="soporte/titi2.jpg" alt="Foto 2" id="foto2">
-        </div>
-    </section>
+        <section id="extras" class="seccion">
+            <div class="seccion-content">
+                <div class="tarjeta animar-entrada animar-desde-abajo">
+                    <i class="fas fa-map-marker-alt icono animar-contenido"></i>
 
-    <section id="final" class="seccion">
-        <div class="seccion-content">
-            <div class="tarjeta">
-                <i class="fas fa-check-circle icono"></i>
-                <h3 class="titulo-tarjeta">Confirmar asistencia</h3>
-                <p>Confirma tu asistencia acá</p>
-                <p>Para mí es muy importante que confirmes tu asistencia a mi cumple, también contame si tenes alguna
-                    restriccion alimentaria</p>
-                <p>Fecha limite de confirmación hasta el 10 de octubre</p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLYbz4GPGNhO5ZolLHW7oHYlg9VcxF612R7YVSkZLFHkVHEA/viewform?usp=sharing&ouid=118346086608200781386"
-                    class="boton-enlace">Confirmar asistencia</a>
-            </div>
-            <div class="tarjeta">
-                <i class="fas fa-tshirt icono"></i>
-                <h3 class="titulo-tarjeta">Dress Code</h3>
-                <p>ELEGANTE</p>
-                <p>Evitar el uso de tonalidades lila o violeta.</p>
-            </div>
-        </div>
-    </section>
+                    <h3 class="titulo-tarjeta">Ubicación</h3>
+                    <p class="nombre-salon">Salón Nova Vila</p>
+                    <p>Av. Ex Combatientes de Malvinas</p>
+                    <p class="hora">21:00 hs</p>
 
-    <section id="informacion" class="seccion">
-        <div class="seccion-content">
-            <div class="tarjeta">
-                <i class="fas fa-gift icono"></i>
-                <h3 class="titulo-tarjeta">Gitf Card</h3>
-                <p>El mejor regalo es que estés junto a mí en este gran día.</p>
-                <p>Pero si quieres obsequiarme algo, podes hacerlo a la siguiente cuenta:</p>
-                <p>alias: delfi-altamirano</p>
+                    <a href="https://maps.app.goo.gl/9TzRLT2BKLZPFhzj7" target="_blank"
+                        class="boton-enlace animar-contenido">Cómo llegar</a>
+                </div>
+                <div class="tarjeta animar-entrada animar-desde-abajo">
+                    <i class="fas fa-music icono-alt icono animar-contenido"></i>
+                    <h3 class="titulo-tarjeta">Playlist</h3>
+                    <p>¡Quiero que nos divirtamos juntos!</p>
+                    <p>Ayúdame desde ya a hacer la playlist de mi fiesta con las canciones infaltables, las que quieres
+                        oír y bailar.</p>
+                    <a href="https://open.spotify.com/playlist/7drSxi7RLdHAZcmH6RtcQg?si=V2YuxXvlSZGP_Zdt-pPVDg&pt=132d6c79831cf79118a491274a7c26a1&pi=ayM6N7xPSXOiI"
+                        target="_blank" class="boton-enlace animar-contenido">Sugerir
+                        canciones</a>
+                </div>
             </div>
-            <div class="tarjeta">
-                <i class="fab fa-instagram icono"></i>
-                <h3 class="titulo-tarjeta">Instagram Hashtag</h3>
-                <p>Usa mi hashtag para subir las fotos y compartirlas conmigo: #Mis15DeDelfi</p>
+        </section>
+
+        <section class="seccion">
+            <div class="galeria-fotos">
+                <img src="soporte/titi2.jpg" alt="Delfina sonriendo" id="foto2"
+                    class="animar-entrada animar-desde-abajo">
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="galeria" class="seccion">
-        <div class="galeria-fotos">
-            <img src="soporte/titi3.jpg" alt="Foto 3" id="foto3">
-        </div>
-    </section>
+        <section id="final" class="seccion">
+            <div class="seccion-content">
+                <div class="tarjeta animar-entrada animar-desde-abajo">
+                    <i class="fas fa-check-circle icono-alt icono animar-contenido"></i>
+                    <h3 class="titulo-tarjeta">Confirmar asistencia</h3>
+                    <p>Para mí es muy importante que confirmes tu asistencia. También contame si tenés alguna
+                        restricción alimentaria.</p>
+                    <p>Fecha límite de confirmación: 10 de octubre.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLYbz4GPGNhO5ZolLHW7oHYlg9VcxF612R7YVSkZLFHkVHEA/viewform?usp=sharing&ouid=118346086608200781386"
+                        class="boton-enlace animar-contenido">Confirmar asistencia</a>
+                </div>
+                <div class="tarjeta animar-entrada animar-desde-abajo">
+                    <i class="fas fa-tshirt icono-alt icono animar-contenido"></i>
+                    <h3 class="titulo-tarjeta">Dress Code</h3>
+                    <p>ELEGANTE</p>
+                    <p>Evitar el uso de tonalidades Morado o violeta.</p>
+                </div>
+            </div>
+        </section>
 
-    <section class="seccion" style="text-align:center">
-        <h2 class="despedida-subtitulo" style="margin:0 0 8px">¡Te espero!</h2>
-        <h1 class="despedida-titulo" style="margin:0; letter-spacing:2px">Delfi</h1>
-    </section>
+        <section id="informacion" class="seccion">
+            <div class="seccion-content">
+                <div class="tarjeta animar-entrada animar-desde-abajo">
+                    <i class="fas fa-gift icono-alt icono animar-contenido"></i>
+                    <h3 class="titulo-tarjeta">Gift Card</h3>
+                    <p>El mejor regalo es que estés junto a mí en este gran día.</p>
+                    <p>Pero si quieres obsequiarme algo, podés hacerlo a la siguiente cuenta:</p>
+                    <p>alias: delfi-altamirano</p>
+                </div>
+                <div class="tarjeta animar-entrada animar-desde-abajo">
+                    <i class="fab fa-instagram icono-alt icono animar-contenido"></i>
+                    <h3 class="titulo-tarjeta">Instagram Hashtag</h3>
+                    <p>Usa mi hashtag para subir las fotos y compartirlas conmigo: #Mis15DeDelfi</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion">
+            <div class="galeria-fotos">
+                <img src="soporte/titi3.jpg" alt="Primer plano de Delfina" id="foto3"
+                    class="animar-entrada animar-desde-izquierda">
+            </div>
+        </section>
+
+        <section class="seccion seccion-despedida">
+            <div class="despedida-texto">
+                <h2 class="despedida-subtitulo animar-entrada animar-desde-izquierda">¡Te espero!</h2>
+                <h1 class="despedida-titulo animar-entrada animar-desde-derecha">Delfi</h1>
+            </div>
+
+        </section>
+
+    </main>
 
     <footer class="footer">
         © 2025 ✨ Desarrollado con ❤️ por Jor Alt
     </footer>
 
     <script src="script.js"></script>
+
+
 </body>
 
 </html>
