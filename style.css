@@ -200,7 +200,7 @@ p {
     font-weight: bold;
     text-decoration: none;
     border-radius: 25px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.4s ease, transform 0.4s ease;
 }
 
 .boton-enlace:hover {
@@ -243,7 +243,7 @@ p {
 /* Preparamos los elementos para la animación: los hacemos invisibles */
 .tarjeta, #foto1, #foto2, #foto3, .icono, .countdown, .despedida-subtitulo, .despedida-titulo,
 .boton-enlace { /* <-- AÑADIDO */
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
