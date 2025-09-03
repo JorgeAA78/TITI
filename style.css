@@ -1,4 +1,8 @@
 /* Estilos Generales */
+main {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Cormorant Garamond', serif;
     background-color: transparent;
@@ -102,7 +106,7 @@ p {
     font-weight: 400;
     font-style: italic;
     margin-top: -20px;
-    transform: rotate(-11deg) translateX(120px);
+    transform: rotate(-11deg) translateX(110px);
 }
 
 .mensaje {
@@ -191,7 +195,13 @@ p {
 }
 
 .hora {
-    font-size: 1.3em; /* Aumenta este valor para hacerlo más grande */
+    font-size: 1.5em; /* Aumenta este valor para hacerlo más grande */
+    font-weight: bold;  /* Opcional: para que esté en negrita */
+    margin-bottom: 1em; /* Opcional: para darle más espacio debajo */
+}
+
+.codigo {
+    font-size: 2.0em; /* Aumenta este valor para hacerlo más grande */
     font-weight: bold;  /* Opcional: para que esté en negrita */
     margin-bottom: 1em; /* Opcional: para darle más espacio debajo */
 }
@@ -218,6 +228,13 @@ p {
     background-color: #ffffff;
     transform: scale(1.05);
 }
+
+/* Estilo para cuando se hace clic en el botón o se navega con teclado */
+.boton-enlace:focus, .boton-enlace:active {
+    background-color: #b38b6d; /* Mantiene el color original */
+    transform: scale(1.05);   /* Mantiene el efecto de crecimiento */
+    outline: none;            /* Quita el borde azul que ponen algunos navegadores */
+}   
 
 /* Galería de Fotos */
 .galeria-fotos {
@@ -246,14 +263,15 @@ p {
 .despedida-subtitulo {
     margin: 0 0 8px;
     text-align: center;
+    font-size: 3.0em; /* Añade esta línea y ajusta el valor */
 }
 
 .despedida-titulo {
     margin: 0;
     letter-spacing: 2px;
     text-align: center;
+    font-size: 5.0em; /* Añade esta línea y ajusta el valor */
 }
-
 
 /* --- ESTILOS COMPLETOS PARA ANIMACIONES --- */
 
@@ -281,13 +299,16 @@ p {
 .animar-entrada .animar-contenido {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    /* Aumentamos la duración para que el efecto sea más lento */
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 .animar-entrada.visible .icono.animar-contenido {
-    transition-delay: 0.2s; /* El ícono aparece 0.2s después */
+    /* Aumentamos el retraso para que tarde más en aparecer */
+    transition-delay: 0.5s;
 }
 .animar-entrada.visible .boton-enlace.animar-contenido {
-    transition-delay: 0.4s; /* El botón aparece 0.4s después */
+    /* Hacemos que el botón aparezca un poco después del icono */
+    transition-delay: 0.8s;
 }
 .animar-entrada.visible .animar-contenido {
     opacity: 1;
