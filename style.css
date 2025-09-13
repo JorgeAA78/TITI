@@ -38,7 +38,7 @@ h3 { font-size: 1.8em; }
 p {
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
-    font-size: 1.1em;
+    font-size: 1.3em;
 }
 
 /* Sección Principal */
@@ -106,7 +106,7 @@ p {
     font-weight: 400;
     font-style: italic;
     margin-top: -20px;
-    transform: rotate(-11deg) translateX(110px);
+    transform: rotate(-11deg) translateX(100px);
 }
 
 .mensaje {
